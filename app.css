@@ -1,0 +1,306 @@
+.mainTitle {
+  border-bottom: 1px solid #adc3dc;
+  position: fixed;
+  color: #385c85;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 51px;
+  background: #FFFFFF;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 22px;
+  line-height: 50px;
+  border-bottom: 1px solid #385c85;
+}
+a.back {
+  position: fixed;
+  z-index: 1001;
+  color: #385c85;
+  text-decoration: none;
+  font-size: 16px;
+  top: 20px;
+}
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+div.menu {
+  position: fixed;
+  z-index: 1001;
+  right: 10px;
+  top: 15px;
+  cursor: pointer;
+}
+div.menu div.handle {
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  position: relative;
+  color: #385c85;
+  font-size: 16px;
+  z-index: 1001;
+}
+div.menu div.contents {
+  display: none;
+  background: #f4f7fb;
+  border: 1px solid #658fbe;
+  position: absolute;
+  z-index: 1;
+  font-size: 14px;
+  margin-top: -1px;
+  right: 0;
+}
+div.menu div.contents a {
+  padding: 4px 8px;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #385c85;
+}
+div.menu:hover div.handle {
+  border: 1px solid #385c85;
+  background: #f4f7fb;
+  border-bottom: none;
+}
+div.menu:hover div.contents {
+  display: block;
+}
+/** Login page **/
+div.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  padding-top: 10px;
+}
+div.login h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 44px;
+  margin: 10px 0 100px;
+  padding: 0;
+  color: #385c85;
+}
+div.login form {
+  padding: 0 30px;
+}
+div.login form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+div.login form fieldset input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid #adc3dc;
+  color: #385c85;
+}
+div.login form fieldset input:first-child {
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
+}
+div.login form input.button {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #385c85;
+  font-size: 16px;
+  margin-top: 15px;
+  background: #385c85;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+/** List page **/
+div.list div.search {
+  background: #f4f7fb;
+  position: fixed;
+  top: 51px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-bottom: 1px solid #385c85;
+}
+div.list div.search input {
+  width: 100%;
+  font-size: 16px;
+  margin: 0;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #385c85;
+  color: #385c85;
+}
+div.list div.contents {
+  position: fixed;
+  top: 101px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto;
+}
+div.list div.contents ul {
+  padding: 0;
+  margin: 0;
+}
+div.list div.contents ul li {
+  list-style: none;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+div.list div.contents ul li a {
+  position: relative;
+  display: block;
+}
+div.list div.contents ul li div.image {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  background: #385c85;
+  border-radius: 40px;
+}
+div.list div.contents ul li div.details {
+  position: absolute;
+  display: inline-block;
+  padding-left: 20px;
+  margin-top: 13px;
+}
+div.list div.contents ul li div.details h5 {
+  margin: 0;
+  color: #658fbe;
+  font-weight: normal;
+}
+div.list div.contents ul li div.details p {
+  margin: 0 0 10px;
+  color: #adc3dc;
+  font-size: 12px;
+  padding-top: 2px;
+  text-transform: capitalize;
+}
+div.list div.contents ul li:hover {
+  background: #f4f7fb;
+}
+div.profile div.top {
+  background: #658fbe;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  padding: 0 20px;
+}
+div.profile div.top h1 {
+  background: none;
+  color: white;
+  border: none;
+}
+div.profile div.top a {
+  color: white;
+}
+div.profile div.top div.image {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border: 3px solid white;
+  border-radius: 5px;
+  top: 60px;
+  left: 20px;
+  z-index: 2;
+}
+div.profile div.top div.badge {
+  border-radius: 20px;
+  background: #1a2b3d;
+  position: absolute;
+  top: 55px;
+  left: 75px;
+  width: 20px;
+  height: 20px;
+  z-index: 3;
+}
+div.profile div.top div.info {
+  position: absolute;
+  background: #555656;
+  top: 60px;
+  left: 85px;
+  height: 40px;
+  right: 0;
+}
+div.profile div.top div.info h3 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  padding-top: 4px;
+  padding-left: 20px;
+  font-weight: normal;
+}
+div.profile div.top div.info p {
+  color: #c3c947;
+  margin: 0;
+  font-size: 10px;
+  margin-top: 2px;
+  padding-left: 20px;
+}
+div.profile div.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  border-top: 1px solid #adc3dc;
+  text-align: center;
+  line-height: 40px;
+}
+div.video {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #658fbe;
+}
+div.video video#callVideo {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+div.video canvas#callCanvas {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+div.notification {
+  z-index: 1002;
+  position: absolute;
+  background: #adc3dc;
+  border: 1px solid #658fbe;
+  border-radius: 3px;
+  padding: 10px;
+  color: #385c85;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s linear;
+  text-align: center;
+}
+div.notification.visible {
+  display: block;
+  opacity: 1;
+}

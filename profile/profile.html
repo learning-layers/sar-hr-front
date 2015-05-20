@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="SARHR">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<h1>Profile</h1>
+
+<form ng-submit="saveProfile()">
+  <fieldset>
+    <legend>Basic information</legend>
+    <input type="text" ng-model="profileFormData.firstName" placeholder="First name"/>
+    <input type="text" ng-model="profileFormData.lastName" placeholder="Last name"/>
+  </fieldset>
+
+  <fieldset>
+    <legend>Skills</legend>
+
+    <div class="row collapse">
+      <div class="small-10 columns">
+        <select ng-model="tagToAdd">
+          <option ng-repeat="tag in allTags | filter:notInUse(tag)" value="{{tag}}">{{tag}}</option>
+        </select>
+      </div>
+      <div class="small-2 columns">
+        <a ng-click="addSkill()" class="button postfix">Add</a>
+      </div>
+    </div>
+
+    <h3 class="subheader">My Skills</h3>
+    <ul>
+      <li ng-repeat="tag in profileTags">{{tag}}</li>
+    </ul>
+
+  </fieldset>
+  <input class="button" value="Save" type="submit"/>
+</form>
+</body>
+</html>

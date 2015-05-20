@@ -1,0 +1,372 @@
+@color: #658FBE;
+
+@darkColor: darken(@color, 20%);
+@darkestColor: darken(@darkColor, 20);
+@lightColor: lighten(@color, 20%);
+@lightestColor: lighten(@lightColor, 20%);
+
+@greyColor: #555656;
+@accentColor: #C3C947;
+
+@headerHeight: 51px;
+
+@mainBarLinkSize: 16px;
+
+.mainTitle {
+  border-bottom: 1px solid @lightColor;
+  position: fixed;
+  color: @darkColor;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @headerHeight;
+  background: #FFFFFF;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 22px;
+  line-height: 50px;
+  border-bottom: 1px solid @darkColor;
+}
+
+a.back  {
+  position: fixed;
+  z-index: 1001;
+  color: @darkColor;
+  text-decoration: none;
+  font-size: @mainBarLinkSize;
+  top: 20px;
+}
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+div.menu {
+  position: fixed;
+  z-index: 1001;
+  right: 10px;
+  top: 15px;
+  cursor: pointer;
+
+  div.handle {
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    position: relative;
+    color: @darkColor;
+    font-size: @mainBarLinkSize;
+    z-index: 1001;
+  }
+
+  div.contents {
+    display: none;
+    background: @lightestColor;
+    border: 1px solid @color;
+    position: absolute;
+    z-index: 1;
+    font-size: 14px;
+    margin-top: -1px;
+    right: 0;
+
+    a {
+      padding: 4px 8px;
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: @darkColor;
+    }
+  }
+}
+
+div.menu:hover {
+  div.handle {
+    border: 1px solid @darkColor;
+    background: @lightestColor;
+    border-bottom: none;
+  }
+
+  div.contents {
+    display: block;
+  }
+}
+
+/** Login page **/
+
+div.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  padding-top: 10px;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 44px;
+    margin: 10px 0 100px;
+    padding: 0;
+    color: @darkColor;
+  }
+
+  form {
+    padding: 0 30px;
+
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      input {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px 8px;
+        font-size: 16px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border: 1px solid @lightColor;
+        color: @darkColor;
+      }
+
+      input:first-child {
+        border-radius: 4px 4px 0 0;
+        border-bottom: none;
+      }
+    }
+
+    input.button {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 6px 8px;
+      border: 1px solid @darkColor;
+      font-size: 16px;
+      margin-top: 15px;
+      background: @darkColor;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+  }
+}
+
+/** List page **/
+div.list {
+  @searchHeight: 50px;
+  div.search {
+    background: @lightestColor;
+    position: fixed;
+    top: @headerHeight;
+    left: 0;
+    right: 0;
+    height: @searchHeight;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border-bottom: 1px solid @darkColor;
+
+    input {
+      width: 100%;
+      font-size: 16px;
+      margin: 0;
+      padding: 6px 8px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid @darkColor;
+      color: @darkColor;
+    }
+  }
+
+  div.contents {
+    position: fixed;
+    top: @headerHeight + @searchHeight;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: auto;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        padding-left: 20px;
+        padding-bottom: 8px;
+        cursor: pointer;
+
+        a {
+          position: relative;
+          display: block;
+        }
+
+        div.image {
+          display: inline-block;
+          position: relative;
+          height: 40px;
+          width: 40px;
+          margin-top: 10px;
+          background: @darkColor;
+          border-radius: 40px;
+        }
+
+        div.details {
+          position: absolute;
+          display: inline-block;
+          padding-left: 20px;
+          margin-top: 13px;
+
+          h5 {
+            margin: 0;
+            color: @color;
+            font-weight: normal;
+          }
+
+          p {
+            margin: 0 0 10px;
+            color: @lightColor;
+            font-size: 12px;
+            padding-top: 2px;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      li:hover {
+        background: @lightestColor;
+      }
+    }
+  }
+}
+
+div.profile {
+  @padding: 20px;
+  @topLine: 60px;
+
+  div.top {
+    background: @color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    padding: 0 @padding;
+
+    h1 {
+      background: none;
+      color: white;
+      border: none;
+    }
+
+    a {
+      color: white;
+    }
+
+    @imageSize: 60px;
+    div.image {
+      position: absolute;
+      height: @imageSize;
+      width: @imageSize;
+      border: 3px solid white;
+      border-radius: 5px;
+      top: @topLine;
+      left: @padding;
+      z-index: 2;
+    }
+
+    div.badge {
+      border-radius: 20px;
+      background: @darkestColor;
+      position: absolute;
+      top: @topLine - 5px;
+      left: @padding + @imageSize - 5px;
+      width: 20px;
+      height: 20px;
+      z-index: 3;
+    }
+
+    div.info {
+      position: absolute;
+      background: @greyColor;
+      top: @topLine;
+      left: @padding + @imageSize + 5px;
+      height: @imageSize / 1.5;
+      right: 0;
+
+      h3 {
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        color: white;
+        font-size: 12px;
+        padding-top: 4px;
+        padding-left: @padding;
+        font-weight: normal;
+      }
+
+      p {
+        color: @accentColor;
+        margin: 0;
+        font-size: 10px;
+        margin-top: 2px;
+        padding-left: @padding;
+      }
+    }
+  }
+
+  div.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    border-top: 1px solid @lightColor;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+div.video {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: @color;
+
+  video#callVideo {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+  }
+
+  canvas#callCanvas {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+  }
+}
+
+div.notification {
+  z-index: 1002;
+  position: absolute;
+  background: @lightColor;
+  border: 1px solid @color;
+  border-radius: 3px;
+  padding: 10px;
+  color: @darkColor;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s linear;
+  text-align: center;
+}
+
+div.notification.visible {
+  display: block;
+  opacity: 1;
+}

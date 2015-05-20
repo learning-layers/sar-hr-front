@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="SARHR">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div class="login">
+  <h1>SAR</h1>
+  <form ng-submit="processLogin()">
+    <fieldset>
+      <input type="text" placeholder="Username" ng-model="loginFormData.user.email"/>
+      <input type="password" placeholder="Password" ng-model="loginFormData.user.password"/>
+    </fieldset>
+    <input class="button" value="Login" type="submit"/>
+  </form>
+</div>
+</body>
+</html>
