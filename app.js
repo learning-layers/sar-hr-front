@@ -81,7 +81,7 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 	}
 }]).config(function($httpProvider) {
 	$httpProvider.interceptors.push('httpInterceptor');
-}).service('peopleService', 'sessionService', ['$http', '$location', function($http, $location, sessionService) {
+}).service('peopleService', ['$http', '$location', 'sessionService', function($http, $location, sessionService) {
 	var t = this;
 	this.people = [];
 
@@ -133,10 +133,11 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 
 	$http.get('users/').success(function(data, status, headers, config) {
 		for(var i = 0; i < data.users.length; i++) {
+			if(data.users[i].id === sessionService.session.user.id) {
+				continue;
+			}
 			t.people.push(data.users[i]);
 		}
-
-
 
 	}).error(function(data, status, headers, config) {
 		// called asynchronously if an error occurs
