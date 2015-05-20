@@ -109,6 +109,7 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 			acceptButton.removeEventListener('click', accept);
 		}
 
+		// This is dumb comment
 		accept = function() {
 			media.getUserStream(function(stream) {
 				document.querySelector('#soundIncoming').pause();
