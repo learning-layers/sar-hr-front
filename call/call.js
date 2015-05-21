@@ -14,6 +14,11 @@ angular.module('SARHR.call', ['ngRoute'])
 
 	$scope.user = {};
 
+	$scope.back = function() {
+		p2p.endCall();
+		$location.path('/list/' + id);
+	};
+
 	$http.get('users/' + id).success(function(data) {
 		$scope.user = data.user;
 
@@ -24,6 +29,7 @@ angular.module('SARHR.call', ['ngRoute'])
 		var name = data.user.peer_id;
 
 		media.setVideoSurface(document.getElementById('callVideo'));
+		media.setThumbnailSource(document.getElementById('callThumb'));
 		media.getUserStream(function(stream) {
 			console.log(stream);
 			media.switchToStream('self');

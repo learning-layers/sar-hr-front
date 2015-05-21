@@ -261,10 +261,14 @@ div.profile div.bottom {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 50px;
   border-top: 1px solid #adc3dc;
   text-align: center;
-  line-height: 40px;
+  line-height: 50px;
+}
+div.profile div.bottom a img {
+  height: 32px;
+  margin-top: 8px;
 }
 div.video {
   position: fixed;
@@ -276,13 +280,32 @@ div.video {
 }
 div.video video#callVideo {
   position: absolute;
-  top: 40px;
-  width: 100%;
+  top: 60px;
+  width: 640px;
+  height: 480px;
+  margin-left: -320px;
+  left: 50%;
+  border: 2px solid #1a2b3d;
+}
+div.video video#callThumb {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  left: auto;
+  width: 160px;
+  height: 120px;
+  border: 1px solid #1a2b3d;
 }
 div.video canvas#callCanvas {
   position: absolute;
-  top: 40px;
-  width: 100%;
+  top: 60px;
+  width: 640px;
+  height: 480px;
+  margin-left: -320px;
+  left: 50%;
+}
+div.video div.top {
+  padding: 0 10px;
 }
 div.notification {
   z-index: 1002;

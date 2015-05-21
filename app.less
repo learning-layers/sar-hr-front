@@ -321,10 +321,15 @@ div.profile {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 50px;
     border-top: 1px solid @lightColor;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
+
+    a img {
+      height: 32px;
+      margin-top: 8px;
+    }
   }
 }
 
@@ -338,14 +343,35 @@ div.video {
 
   video#callVideo {
     position: absolute;
-    top: 40px;
-    width: 100%;
+    top: 60px;
+    width: 640px;
+    height: 480px;
+    margin-left: -320px;
+    left: 50%;
+    border: 2px solid @darkestColor;
+  }
+
+  video#callThumb {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    left: auto;
+    width: 160px;
+    height: 120px;
+    border: 1px solid @darkestColor;
   }
 
   canvas#callCanvas {
     position: absolute;
-    top: 40px;
-    width: 100%;
+    top: 60px;
+    width: 640px;
+    height: 480px;
+    margin-left: -320px;
+    left: 50%;
+  }
+
+  div.top {
+    padding: 0 10px;
   }
 }
 
