@@ -144,4 +144,6 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 		// called asynchronously if an error occurs
 		// or server returns response with an error status.
 	});
+}]).run(['$rootScope', 'peopleService', function($rootScope, peopleService) {
+	return $rootScope.peopleService = peopleService;
 }]);

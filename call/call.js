@@ -30,10 +30,6 @@ angular.module('SARHR.call', ['ngRoute'])
 
 		media.setVideoSurface(document.getElementById('callVideo'));
 		media.setThumbnailSource(document.getElementById('callThumb'));
-		media.getUserStream(function(stream) {
-			console.log(stream);
-			media.switchToStream('self');
-		});
 
 		p2p.connectTo(name, function() {
 			p2p.streamVideo(name, function() {
