@@ -89,7 +89,6 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 	var accept = false;
 	p2p.setOnCall(function(call) {
 		document.querySelector('#soundIncoming').play();
-		console.log(call);
 
 		var caller = false;
 		for(var i = 0; i < t.people.length; i++) {
@@ -109,13 +108,17 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 			acceptButton.removeEventListener('click', accept);
 		}
 
-		// This is dumb comment
 		accept = function() {
 			media.getUserStream(function(stream) {
 				document.querySelector('#soundIncoming').pause();
 				notification.classList.remove('visible');
 				window.location.hash = '#/call/' + caller.id;
+				call.on('stream', function(stream) {
+					media.setStream(call.peer, stream);
+					media.switchToStream(call.peer);
+				});
 				call.answer(stream);
+
 			});
 		};
 		acceptButton.addEventListener('click', accept);

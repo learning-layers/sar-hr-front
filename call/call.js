@@ -19,25 +19,31 @@ angular.module('SARHR.call', ['ngRoute'])
 		$location.path('/list/' + id);
 	};
 
-	$http.get('users/' + id).success(function(data) {
-		$scope.user = data.user;
 
-		if($scope.user.status === 'offline') {
-			$location.path('/list/' + id);
-			return;
-		}
-		var name = data.user.peer_id;
+	media.setVideoSurface(document.getElementById('callVideo'));
+	media.setThumbnailSource(document.getElementById('callThumb'));
 
-		media.setVideoSurface(document.getElementById('callVideo'));
-		media.setThumbnailSource(document.getElementById('callThumb'));
+	drawing.setup();
 
-		p2p.connectTo(name, function() {
-			p2p.streamVideo(name, function() {
-				console.log('STREAMING')
-			})
+
+	if(!p2p.isBeingCalled()) {
+		$http.get('users/' + id).success(function(data) {
+			$scope.user = data.user;
+
+			if($scope.user.status === 'offline') {
+				$location.path('/list/' + id);
+				return;
+			}
+			var name = data.user.peer_id;
+
+			p2p.connectTo(name, function() {
+				p2p.streamVideo(name, function() {
+				})
+			});
 		});
+	} else {
 
-		drawing.setup();
-	});
+	}
+
 
 }]);
