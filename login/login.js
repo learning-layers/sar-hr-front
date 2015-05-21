@@ -18,6 +18,7 @@ angular.module('SARHR.login', ['ngRoute'])
 			if(status === 201) {
 				sessionService.setSession(data.session, $http);
 				$location.path('/list');
+				window.location.reload();
 			}
 		});
 	};

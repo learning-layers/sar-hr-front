@@ -19,12 +19,14 @@ angular.module('SARHR.call', ['ngRoute'])
 		$location.path('/list/' + id);
 	};
 
-
 	media.setVideoSurface(document.getElementById('callVideo'));
 	media.setThumbnailSource(document.getElementById('callThumb'));
 
 	drawing.setup();
 
+	document.getElementById('callThumb').addEventListener('click', function() {
+		media.swapStreams();
+	});
 
 	if(!p2p.isBeingCalled()) {
 		$http.get('users/' + id).success(function(data) {
@@ -44,6 +46,5 @@ angular.module('SARHR.call', ['ngRoute'])
 	} else {
 
 	}
-
 
 }]);
