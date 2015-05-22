@@ -81,7 +81,13 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 	}
 }]).config(function($httpProvider) {
 	$httpProvider.interceptors.push('httpInterceptor');
-}).service('peopleService', ['$http', '$location', 'sessionService', function($http, $location, sessionService) {
+}).service('skillService', ['$http', function($http) {
+	var t = this;
+	t.skills = {};
+	$http.get('skills/').success(function(data) {
+		t.skills = data.skills;
+	});
+}]).service('peopleService', ['$http', '$location', 'sessionService', function($http, $location, sessionService) {
 	var t = this;
 	this.people = [];
 

@@ -20,6 +20,13 @@
     </div>
   </div>
 
+  <div class="content">
+    <h4>Skills</h4>
+    <ul>
+      <li ng-repeat="skill in user.skill_ids">{{skill | skills}}</li>
+    </ul>
+  </div>
+
   <div class="bottom">
     <a href="#/call/" id="profileCallLink"><img src="img/vision_sharing.png" alt=""/></a>
   </div>

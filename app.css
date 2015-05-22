@@ -256,6 +256,30 @@ div.profile div.top div.info p {
   margin-top: 2px;
   padding-left: 20px;
 }
+div.profile div.content {
+  position: fixed;
+  top: 150px;
+  background: #555656;
+  margin: 0;
+  left: 0;
+  right: 0;
+}
+div.profile div.content h4 {
+  color: white;
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+div.profile div.content ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+div.profile div.content ul li {
+  color: white;
+  text-transform: capitalize;
+}
 div.profile div.bottom {
   position: fixed;
   bottom: 0;

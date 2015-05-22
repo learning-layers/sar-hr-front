@@ -9,7 +9,7 @@ angular.module('SARHR.list', ['ngRoute'])
 	});
 }])
 
-.controller('ListCtrl', ['$scope', 'peopleService', function($scope, peopleService) {
+.controller('ListCtrl', ['$scope', 'peopleService', 'skillService', function($scope, peopleService, skillService) {
 	$scope.query = '';
 
 	$scope.people = peopleService.people;
