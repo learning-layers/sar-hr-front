@@ -140,6 +140,7 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 			if(data.users[i].id === sessionService.session.user.id) {
 				continue;
 			}
+			data.users[i].status = data.users[i].status.split('_').join(' ');
 			t.people.push(data.users[i]);
 		}
 

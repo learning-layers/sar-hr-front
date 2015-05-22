@@ -15,6 +15,7 @@ angular.module('SARHR.details', ['ngRoute'])
 	$scope.user = {};
 
 	$http.get('users/'+id).success(function(data) {
+		data.user.status = data.user.status.split('_').join(' ');
 		$scope.user = data.user;
 
 		document.getElementById('profileCallLink').href = '#/call/'+id;
