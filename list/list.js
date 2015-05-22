@@ -28,6 +28,12 @@ angular.module('SARHR.list', ['ngRoute'])
 				}
 			}
 
+			for(var i = 0; i < person.skill_ids.length; i++) {
+				if(skillService.skills[person.skill_ids[i]].name.indexOf(needle) > -1) {
+					return true;
+				}
+			}
+
 			return false;
 		}
 	}
