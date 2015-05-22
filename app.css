@@ -173,6 +173,13 @@ div.list div.contents ul li div.image {
   background: #385c85;
   border-radius: 40px;
 }
+div.list div.contents ul li p.title {
+  position: absolute;
+  font-size: 11px;
+  color: #adc3dc;
+  right: 10px;
+  top: 12px;
+}
 div.list div.contents ul li div.details {
   position: absolute;
   display: inline-block;

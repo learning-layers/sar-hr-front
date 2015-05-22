@@ -16,17 +16,19 @@
   <div class="contents">
     <ul>
 
-        <li class="" ng-repeat="person in people | filter:peopleSearch(person)">
-          <a href="#/list/{{person.id}}">
+      <li class="" ng-repeat="person in people | filter:peopleSearch(person)">
+        <a href="#/list/{{person.id}}">
           <div class="image"></div>
+          <p class="title">{{person.title}}</p>
+
           <div class="details">
-            <h5>{{person.first_name + ' ' + person.last_name}}</h5>
+            <h5>{{person.first_name + ' ' + person.last_name}} </h5>
 
             <p>{{person.status}}</p>
           </div>
 
-          </a>
-        </li>
+        </a>
+      </li>
 
 
     </ul>
