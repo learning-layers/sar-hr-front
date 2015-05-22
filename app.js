@@ -85,7 +85,9 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 	var t = this;
 	t.skills = {};
 	$http.get('skills/').success(function(data) {
-		t.skills = data.skills;
+		for(var i = 0; i < data.skills.length; i++) {
+			t.skills[data.skills[i].id] = data.skills[i];
+		}
 	});
 }]).service('peopleService', ['$http', '$location', 'sessionService', function($http, $location, sessionService) {
 	var t = this;
