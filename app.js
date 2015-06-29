@@ -63,7 +63,7 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 			var a = request.url.split('/');
 			var last = a[a.length - 1].split('.');
 			if(last.length < 2) {
-				request.url = 'https://legroup-heureka.herokuapp.com/' + request.url;
+				request.url = 'https://sar-backend.herokuapp.com/' + request.url;
 				sessionService.setHeaders(request);
 			}
 			return request;
