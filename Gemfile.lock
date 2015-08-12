@@ -1,9 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    daemons (1.2.2)
-    eventmachine (1.0.7)
-    rack (1.6.1)
+    daemons (1.2.3)
+    eventmachine (1.0.8)
+    rack (1.6.4)
+    rack-ssl-enforcer (0.2.9)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -15,5 +16,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rack-ssl-enforcer
   thin
   vienna
+
+BUNDLED WITH
+   1.10.4
