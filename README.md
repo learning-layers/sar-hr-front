@@ -2,7 +2,7 @@
 
 AngularJS front-end for the Social Augmented Reality HR component.
 
-### Licence ###
+### License ###
 
 ```
 The MIT License (MIT)
