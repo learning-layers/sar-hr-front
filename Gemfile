@@ -10,3 +10,6 @@ gem 'thin'
 
 # Simple static HTML serving middleware for Rack.
 gem 'vienna'
+
+# Enforce SSL connections.
+gem 'rack-ssl-enforcer'
