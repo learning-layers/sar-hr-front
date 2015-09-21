@@ -162,8 +162,10 @@ var app = angular.module('SARHR', ['ngRoute', 'SARHR.login', 'SARHR.list', 'SARH
 		// called asynchronously if an error occurs
 		// or server returns response with an error status.
 	});
-}]).run(['$rootScope', 'peopleService', 'sessionService', function($rootScope, peopleService, sessionService) {
+}]).run(['$rootScope', '$http', 'peopleService', 'sessionService', function($rootScope, $http, peopleService, sessionService) {
 	$rootScope.peopleService = peopleService;
-	$rootScope.sessionService = sessionService;
+	$rootScope.forceUniqueSession = function() {
+		sessionService.forceUnique($http);
+	};
 	return $rootScope;
 }]);
