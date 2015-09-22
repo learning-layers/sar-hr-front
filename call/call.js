@@ -17,6 +17,7 @@ angular.module('SARHR.call', ['ngRoute'])
 	$scope.back = function() {
 		p2p.endCall();
 		window.location.href = '/#/list/' + id;
+		window.location.reload();
 	};
 
 	media.setVideoSurface(document.getElementById('callVideo'));
